@@ -1,0 +1,15 @@
+{
+  "name": "metamorphose",
+  "version": "0.0.1",
+  "description": "Apply transformations to your objects based on schemas",
+  "main": "lib/schema-object.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "schema",
+    "transform"
+  ],
+  "author": "Ricardo Canastro",
+  "license": "ISC"
+}
