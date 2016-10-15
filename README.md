@@ -1,12 +1,13 @@
 # Metamorphose
 
-Metamorphose is a tool that allows you to transform your objects on the fly by defining schemas.
+Metamorphose is a library that allows you to transform your js objects on the fly by pre-defined schemas.
 
 # Features
 * Extend schemas
 * Default values
 * Nested schemas
 * Transformations
+* Dot notation
 * Type validation (work in progress)
 
 # Example
@@ -35,7 +36,11 @@ Here is a simple example that tries to include most of the features of metamorph
 
     const Tv = Base.extends({
         specs: { key: ':root', type: Spec },
-        price: { key: 'price', defaults: 'N/A' }
+        price: { key: 'price', defaults: 'N/A' },
+        internetConnection: {
+            key: 'others.hasInternetConnection',
+            transform: (value) => value ? 'check' : 'not check'
+        }
     });
 
 ## Original Object
@@ -45,6 +50,7 @@ Here is a simple example that tries to include most of the features of metamorph
         isPrivate: true,
         size: 42,
         quality: 'Full HD',
+        others: { hasInternetConnection: true },
         videoConnectors: '1 x Coaxial Digital Audio, 1 x Component Video, 1 x Composite Video, 2 x HDMI',
         audioConnectors: '1 x Headphone, 1 x PC Audio In, 1 x RCA Audio L+R'
     };
@@ -69,5 +75,6 @@ Here is a simple example that tries to include most of the features of metamorph
                 '1 x PC Audio In',
                 '1 x RCA Audio L+R'
             ]
-        }
+        },
+        internetConnection: 'check'
     }

@@ -25,7 +25,11 @@ const Spec = new SchemaObject({
 
 const Tv = Base.extends({
     specs: { key: ':root', type: Spec },
-    price: { key: 'price', defaults: 'N/A' }
+    price: { key: 'price', defaults: 'N/A' },
+    internetConnection: {
+        key: 'others.hasInternetConnection',
+        transform: (value) => value ? 'check' : 'not check'
+    }
 });
 
 const expected = {
@@ -42,7 +46,8 @@ const expected = {
             '1 x PC Audio In',
             '1 x RCA Audio L+R'
         ]
-    }
+    },
+    internetConnection: 'check'
 };
 
 const original = {
@@ -51,6 +56,7 @@ const original = {
     isPrivate: true,
     size: 42,
     quality: 'Full HD',
+    others: { hasInternetConnection: true },
     videoConnectors: '1 x Coaxial Digital Audio, 1 x Component Video, 1 x Composite Video, 2 x HDMI',
     audioConnectors: '1 x Headphone, 1 x PC Audio In, 1 x RCA Audio L+R'
 };
