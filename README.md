@@ -1,3 +1,5 @@
+[![Travis CI CI](https://travis-ci.org/canastro/metamorphose.svg?branch=master)](https://travis-ci.org/canastro/metamorphose)
+
 # Metamorphose
 
 Metamorphose is a library that allows you to transform your js objects on the fly by pre-defined schemas.
