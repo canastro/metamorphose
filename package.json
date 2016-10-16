@@ -4,12 +4,18 @@
   "description": "Apply transformations to your objects based on schemas",
   "main": "lib/schema-object.js",
   "scripts": {
-    "test": "test"
+    "test": "istanbul cover ./node_modules/.bin/_mocha tests",
+    "test:dev": "mocha tests --recursive --watch"
   },
   "keywords": [
     "schema",
     "transform"
   ],
   "author": "Ricardo Canastro",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2"
+  }
 }
