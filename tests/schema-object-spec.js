@@ -19,7 +19,7 @@ describe('SchemaObject', function() {
 
                 const result = Base.create(original);
 
-                expect(result.obj).to.deep.equal(expected);
+                expect(result.toObject()).to.deep.equal(expected);
             });
         });
 
@@ -38,7 +38,7 @@ describe('SchemaObject', function() {
 
                 const result = Base.create(original);
 
-                expect(result.obj).to.deep.equal(expected);
+                expect(result.toObject()).to.deep.equal(expected);
             });
         });
 
@@ -60,7 +60,7 @@ describe('SchemaObject', function() {
 
                 const result = Tv.create(original);
 
-                expect(result.obj).to.deep.equal(expected);
+                expect(result.toObject()).to.deep.equal(expected);
             });
         });
 
@@ -73,7 +73,7 @@ describe('SchemaObject', function() {
 
             const result = Base.create(original);
 
-            expect(result.obj).to.deep.equal(expected);
+            expect(result.toObject()).to.deep.equal(expected);
         });
     });
 
@@ -95,7 +95,7 @@ describe('SchemaObject', function() {
 
             const result = Tv.create(original);
 
-            expect(result.obj).to.deep.equal(expected);
+            expect(result.toObject()).to.deep.equal(expected);
         });
     });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "@canastro/metamorphose",
+  "name": "@canastro/metamorphosis",
   "version": "0.0.1",
   "description": "Apply transformations to your objects based on schemas",
   "main": "lib/schema-object.js",
